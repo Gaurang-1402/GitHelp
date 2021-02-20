@@ -1,11 +1,12 @@
-// import React, { useState, useEffect } from "react";
-import React from "react"
+import React, { useState} from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch} from "react-redux";
 import {
   Row,
   Col,
   Image,
+  Form,
+  Button, 
   ListGroup,
 } from "react-bootstrap";
 // import Rating from "../components/Rating";
@@ -16,6 +17,7 @@ import Meta from "../components/Meta";
 //   listProductDetails,
 //   createProductReview,
 // } from "../actions/productActions";
+import {createProductReview} from "../actions/productActions";
 // import { PRODUCT_CREATE_REVIEW_RESET } from "../constants/productConstants";
 import {Avatar} from '@material-ui/core'
 import './ProductScreen.css'
@@ -31,23 +33,23 @@ import {ProgressBar} from 'react-bootstrap'
 const ProductScreen = ({ history, match }) => {
 
   // const [qty, setQty] = useState(1);
-  // const [rating, setRating] = useState(0);
-  // const [comment, setComment] = useState("");
+  const [rating] = useState(0);
+  const [comment, setComment] = useState("");
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.productDetails);
-  const { loading, error } = productDetails;
+  const { loading, error, product } = productDetails;
 
-  // const userLogin = useSelector((state) => state.userLogin);
-  // const { userInfo } = userLogin;
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
-  // const productReviewCreate = useSelector((state) => state.productReviewCreate);
-  // const {
-  //   success: successProductReview,
-  //   loading: loadingProductReview,
-  //   error: errorProductReview,
-  // } = productReviewCreate;
+  const productReviewCreate = useSelector((state) => state.productReviewCreate);
+  const {
+    success: successProductReview,
+    loading: loadingProductReview,
+    error: errorProductReview,
+  } = productReviewCreate;
 
   // useEffect(() => {
   //   if (successProductReview) {
@@ -64,15 +66,15 @@ const ProductScreen = ({ history, match }) => {
   //   history.push(`/cart/${match.params.id}?qty=${qty}`);
   // };
 
-  // const submitHandler = (e) => {
-  //   e.preventDefault();
-  //   dispatch(
-  //     createProductReview(match.params.id, {
-  //       rating,
-  //       comment,
-  //     })
-  //   );
-  // };
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(
+      createProductReview(match.params.id, {
+        rating,
+        comment,
+      })
+    );
+  };
 
   return (
     <>
@@ -258,20 +260,20 @@ const ProductScreen = ({ history, match }) => {
             </Col> */}
           </Row>
           <Row>
-            {/* <Col md={6}>
-              <h2>Reviews</h2>
-              {product.reviews.length === 0 && <Message>No Reviews</Message>}
+            <Col md={6}>
+              <h2>Q&A</h2>
+              {product.reviews.length === 0 && <Message>No Question</Message>}
               <ListGroup variant="flush">
-                {product.reviews.map((review) => (
+                {/* {product.reviews.map((review) => (
                   <ListGroup.Item key={review._id}>
                     <strong>{review.name}</strong>
                     <Rating value={review.rating} />
                     <p>{review.createdAt.substring(0, 10)}</p>
                     <p>{review.comment}</p>
                   </ListGroup.Item>
-                ))}
+                ))} */}
                 <ListGroup.Item>
-                  <h2>Write a Customer Review</h2>
+                  <h2>Ask a question</h2>
                   {successProductReview && (
                     <Message variant="success">
                       Review submitted successfully
@@ -283,7 +285,7 @@ const ProductScreen = ({ history, match }) => {
                   )}
                   {userInfo ? (
                     <Form onSubmit={submitHandler}>
-                      <Form.Group controlId="rating">
+                      {/* <Form.Group controlId="rating">
                         <Form.Label>Rating</Form.Label>
                         <Form.Control
                           as="select"
@@ -297,9 +299,9 @@ const ProductScreen = ({ history, match }) => {
                           <option value="4">4 - Very Good</option>
                           <option value="5">5 - Excellent</option>
                         </Form.Control>
-                      </Form.Group>
+                      </Form.Group> */}
                       <Form.Group controlId="comment">
-                        <Form.Label>Comment</Form.Label>
+                        {/* <Form.Label>Comment</Form.Label> */}
                         <Form.Control
                           as="textarea"
                           row="3"
@@ -322,7 +324,7 @@ const ProductScreen = ({ history, match }) => {
                   )}
                 </ListGroup.Item>
               </ListGroup>
-            </Col> */}
+            </Col>
           </Row>
         </>
       )}
