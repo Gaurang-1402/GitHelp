@@ -1,0 +1,8 @@
+.Footer{
+    border-top: 1px solid red;
+    padding: 30px 90px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(39, 43, 48)
+}
