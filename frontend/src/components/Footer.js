@@ -6,11 +6,6 @@ const Footer = () => {
   return (
     <footer className="Footer">
       Copyright © HackerHub 2020. All Rights Reserved.
-      {/* <Container>
-        <Row>
-          <Col className='text-center py-3'>Copyright © 2020. All Rights Reserved.</Col>
-        </Row>
-      </Container> */}
     </footer>
   )
 }

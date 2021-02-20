@@ -51,3 +51,10 @@ h2 {
     font-size: 2.5vw;
   }
 }
+
+.icon {
+    display: inline-block;
+    width: 16.3px;
+    height: 13.45px;
+    overflow: hidden;
+}
