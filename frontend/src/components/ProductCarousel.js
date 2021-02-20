@@ -22,18 +22,49 @@ const ProductCarousel = () => {
     <Message variant='danger'>{error}</Message>
   ) : (
     <Carousel pause='hover' className='bg-dark'>
-      {products.map((product) => (
-        <Carousel.Item key={product._id}>
-          <Link to={`/product/${product._id}`}>
-            <Image src={product.image} alt={product.name} fluid />
+
+        <Carousel.Item key=''>
+          <Link to={`/product`}>
+            <Image src='/images/pytorch.jpg' alt='' fluid />
             <Carousel.Caption className='carousel-caption'>
               <h2>
-                {product.name} (${product.price})
+                Pytorch 
               </h2>
             </Carousel.Caption>
           </Link>
         </Carousel.Item>
-      ))}
+        <Carousel.Item key=''>
+          <Link to={`/product`}>
+            <Image src='/images/coviddashboard.jpg' alt='' fluid />
+            <Carousel.Caption className='carousel-caption'>
+              <h2>
+                Covid-19 Dashboard 
+              </h2>
+            </Carousel.Caption>
+          </Link>
+        </Carousel.Item>
+
+        <Carousel.Item key=''>
+          <Link to={`/product`}>
+            <Image src='/images/flappybird.jpg' alt='' fluid />
+            <Carousel.Caption className='carousel-caption'>
+              <h2>
+                Flappy Bird
+              </h2>
+            </Carousel.Caption>
+          </Link>
+        </Carousel.Item>
+
+        <Carousel.Item key=''>
+          <Link to={`/product`}>
+            <Image src='/images/caltox.jpg' alt='' fluid />
+            <Carousel.Caption className='carousel-caption'>
+              <h2>
+                Caltox Tracker
+              </h2>
+            </Carousel.Caption>
+          </Link>
+        </Carousel.Item>
     </Carousel>
   )
 }
