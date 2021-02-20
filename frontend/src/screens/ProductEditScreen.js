@@ -17,6 +17,7 @@ const ProductEditScreen = ({ match, history }) => {
   const [image, setImage] = useState('')
   const [githublink, setGithubLink] = useState('')
   const [language, setLanguage] = useState('')
+  const [ hashtag, setHashtag] = useState('')
   // const [brand, setBrand] = useState('')
   // const [category, setCategory] = useState('')
   // const [countInStock, setCountInStock] = useState(0)
@@ -52,6 +53,7 @@ const ProductEditScreen = ({ match, history }) => {
         // setBrand(product.brand)
         // setCategory(product.category)
         // setCountInStock(product.countInStock)
+        setHashtag(product.hashtag)
         setDescription(product.description)
         setIssue(product.issue)
       }
@@ -90,6 +92,7 @@ const ProductEditScreen = ({ match, history }) => {
         githublink, 
         language,
         image,
+        hashtag,
         description,
         issue,
       })
@@ -157,6 +160,16 @@ const ProductEditScreen = ({ match, history }) => {
               </select>
             </Form.Group>
 
+            <Form.Group controlId='hashtag'>
+              <Form.Label>Hashtag</Form.Label>
+              <Form.Control
+                type='hashtag'
+                placeholder='Enter hashtag'
+                value={hashtag}
+                onChange={(e) => setHashtag(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
             <Form.Group controlId='githublink'>
               <Form.Label>Github Link</Form.Label>
               <Form.Control
@@ -166,6 +179,7 @@ const ProductEditScreen = ({ match, history }) => {
                 onChange={(e) => setGithubLink(e.target.value)}
               ></Form.Control>
             </Form.Group>
+
 
             <Form.Group controlId='description'>
               <Form.Label>Description</Form.Label>
