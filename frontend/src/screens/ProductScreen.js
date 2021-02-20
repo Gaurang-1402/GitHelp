@@ -24,6 +24,9 @@ import FolderOpenIcon from '@material-ui/icons/FolderOpen';
 import InfoIcon from '@material-ui/icons/Info';
 import LanguageIcon from '@material-ui/icons/Language';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+import {ProgressBar} from 'react-bootstrap'
 
 const ProductScreen = ({ history, match }) => {
 
@@ -91,17 +94,26 @@ const ProductScreen = ({ history, match }) => {
                   <div className="project__ownerName"><strong>Tianning Li</strong></div>
                   <div className="project__ownerDesc">Graduate Student @ USC</div>
                 </ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item className="project__ownerProject">
                   <div>
-                    <LocationOnIcon /> Los Angeles
+                    <MailOutlineIcon /> 
+                    <div>ltianningli@gmail.com</div>
                   </div>
                 </ListGroup.Item>
                 <ListGroup.Item className="project__ownerProject">
                   <div>
-                    <FolderOpenIcon /> finvizfinance
+                    <LocationOnIcon /> 
+                    <div>Los Angeles</div>
+                  </div>
+                </ListGroup.Item>
+                <ListGroup.Item className="project__ownerProject">
+                  <div>
+                    <FolderOpenIcon /> 
+                    <div>finvizfinance</div>
                   </div>
                   <div>
-                    <FolderOpenIcon /> arktradetracker
+                    <FolderOpenIcon /> 
+                    <div>arktradetracker</div>
                   </div>
                 </ListGroup.Item>
               </ListGroup>
@@ -112,16 +124,15 @@ const ProductScreen = ({ history, match }) => {
                 <ListGroup.Item>
                   <h3 className="projectItemCard__header">COVID 19 Dashboard</h3>
                   <div className="projectItemCard__hashtags">
-                    <div className="projectItemCard__hashtag"><strong>web-programming</strong></div>
-                    <div className="projectItemCard__hashtag"><strong>data-visualization</strong></div>
+                    <div className="projectItemCard__hashtag" style={{backgroundColor: 'rgb(162, 238, 239)'}}><strong>enhancement</strong></div>
+                    <div className="projectItemCard__hashtag" style={{backgroundColor: 'rgb(0, 134, 114)'}}><strong>help wanted</strong></div>
                   </div>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <h4>Issues</h4>
-                  <p>
-                    I want the layout to be responsive so it can not only fit to computer screen but also mobile screen. I need help on 
-                    the responsive design. 
-                  </p>
+                  <p>- bug fixes</p>
+                  <p>- Mobile integration feature</p>
+                  <p>- Optimization problems</p>
                 </ListGroup.Item>
               </ListGroup>
             </Col>
@@ -142,8 +153,12 @@ const ProductScreen = ({ history, match }) => {
                       <LanguageIcon />
                       <div><strong>Language</strong></div>
                     </div>
-                    <div>
-                      React.js
+                    <ProgressBar>
+                      <ProgressBar variant="warning" now={100} key={2} animated={true}/>
+                    </ProgressBar>
+                    <div className="project__languageDetail">
+                        <FiberManualRecordIcon style={{color: '#f89406'}}/>
+                        <div>React.js <span className="project__languagePct">99.0%</span></div>
                     </div>
                   </div>
                   <div className="project__infoBlock">

@@ -6,9 +6,15 @@
 .project__ownerName{
     text-align: center;
 }
+.project__ownerProject>div{
+    display: flex;
+    overflow: scroll;
+}
 .project__ownerProject svg{
     height: 20px !important;
     width: 20px !important;
+    margin-right:5px;
+    align-items: center;
 }
 .project__infoBlock{
     margin-bottom: 10px;
@@ -37,7 +43,7 @@
     flex-wrap: wrap;
 }
 .projectItemCard__hashtag{
-    background-color: rgb(57, 101, 204);
+    /* background-color: rgb(57, 101, 204); */
     color:white;
     margin:3px;
     padding:3px 10px;
@@ -46,4 +52,21 @@
 }
 .project__infoLink{
     color: #aaa;
+}
+.project__languageDetail{
+    margin-top: 5px;
+    align-items: center;
+    display:flex;
+}
+.project__languageDetail svg{
+    height: 10px !important;
+    width: 10px !important;
+    margin-right: 5px;
+}
+.project__languagePct{
+    font-size: 10px;
+}
+.progress{
+    margin-top: 5px;
+    height: 8px;
 }
