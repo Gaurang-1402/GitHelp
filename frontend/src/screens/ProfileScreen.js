@@ -73,7 +73,7 @@ const ProfileScreen = ({ location, history }) => {
       <Col xs={6}>
        <Card style={{width: '15rem'}}>
           <Card.Body>
-           <Card.Title>Your Points: 50</Card.Title>
+           <Card.Title>Your Points: 75</Card.Title>
            <img class ='icon' src='../images/trophy.svg'></img>
            <Card.Text>
            </Card.Text>
@@ -155,22 +155,31 @@ const ProfileScreen = ({ location, history }) => {
     </Row>
     <Row>
       <Col md={12}>
-        <h2>Activity</h2>
+        <h2>Contribution Activity</h2>
         
           <Table striped bordered hover responsive className='table-sm'>
             <thead>
               <tr>
                 <th>TITLE</th>
                 <th>CONTRIBUTION DATE</th>
+                <th>ISSUE</th>
                 <th>LINK</th>
-                <th>Points</th>
+                <th>POINTS</th>
               </tr>
             </thead>
             <tbody>
                   <td>Covid-19 Dashboard</td>
                   <td>February 20, 2021</td>
+                  <td>fix header layout</td>
                   <td><a href='https://github.com/lit26/COVID19_Dashboard'>https://github.com/lit26/COVID19_Dashboard</a></td>
                   <td>50</td>
+            </tbody>
+            <tbody>
+              <td>Cal ToxTrack</td>
+              <td>January 15, 2021</td>
+              <td>test out app</td>
+              <td><a href='https://github.com/meganluisa/ca_pollution_application'>https://github.com/meganluisa/ca_pollution_application</a></td>
+              <td>25</td>
             </tbody>
           </Table>
         
