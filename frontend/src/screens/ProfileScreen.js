@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Table, Form, Button, Row, Col } from 'react-bootstrap'
+import { Card, ListGroup, Image, Modal, Container, Table, Form, Button, Row, Col } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
@@ -53,10 +53,41 @@ const ProfileScreen = ({ location, history }) => {
     }
   }
 
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
+    <Container>
+    <Row className="justify-content-md-center">
+      <Col>
+      <Image src="../images/pup.jpg" roundedCircle />
+      </Col>
+      <Col>
+      <ListGroup>
+        <ListGroup.Item>{user.name}</ListGroup.Item>
+        <ListGroup.Item>{user.email}</ListGroup.Item>
+        <ListGroup.Item action onClick={handleShow} variant='dark'>Update Profile</ListGroup.Item>
+      </ListGroup>
+      </Col>
+      <Col xs={6}>
+       <Card style={{width: '15rem'}}>
+          <Card.Body>
+           <Card.Title>Your Points: 50</Card.Title>
+           <img class ='icon' src='../images/trophy.svg'></img>
+           <Card.Text>
+           </Card.Text>
+          </Card.Body>
+       </Card>
+      </Col>
+    </Row>
     <Row>
-      <Col md={3}>
-        <h2>User Profile</h2>
+      <Col>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Update Profile</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
         {message && <Message variant='danger'>{message}</Message>}
         {}
         {success && <Message variant='success'>Profile Updated</Message>}
@@ -75,7 +106,11 @@ const ProfileScreen = ({ location, history }) => {
                 onChange={(e) => setName(e.target.value)}
               ></Form.Control>
             </Form.Group>
-
+ 
+            <Form.Group>
+              <Form.File id="exampleFormControlFile1" label="Profile Image" />
+            </Form.Group>
+          
             <Form.Group controlId='email'>
               <Form.Label>Email Address</Form.Label>
               <Form.Control
@@ -111,59 +146,37 @@ const ProfileScreen = ({ location, history }) => {
             </Button>
           </Form>
         )}
+        </Modal.Body>
+      </Modal>
+
       </Col>
-      <Col md={9}>
-        <h2>My Repositories</h2>
-        {loadingOrders ? (
-          <Loader />
-        ) : errorOrders ? (
-          <Message variant='danger'>{errorOrders}</Message>
-        ) : (
+
+
+    </Row>
+    <Row>
+      <Col md={12}>
+        <h2>Activity</h2>
+        
           <Table striped bordered hover responsive className='table-sm'>
             <thead>
               <tr>
-                <th>ID</th>
-                <th>DATE</th>
-                <th>TOTAL</th>
-                <th>PAID</th>
-                <th>DELIVERED</th>
-                <th></th>
+                <th>TITLE</th>
+                <th>CONTRIBUTION DATE</th>
+                <th>LINK</th>
+                <th>Points</th>
               </tr>
             </thead>
             <tbody>
-              {orders.map((order) => (
-                <tr key={order._id}>
-                  <td>{order._id}</td>
-                  <td>{order.createdAt.substring(0, 10)}</td>
-                  <td>{order.totalPrice}</td>
-                  <td>
-                    {order.isPaid ? (
-                      order.paidAt.substring(0, 10)
-                    ) : (
-                      <i className='fas fa-times' style={{ color: 'red' }}></i>
-                    )}
-                  </td>
-                  <td>
-                    {order.isDelivered ? (
-                      order.deliveredAt.substring(0, 10)
-                    ) : (
-                      <i className='fas fa-times' style={{ color: 'red' }}></i>
-                    )}
-                  </td>
-                  <td>
-                    <LinkContainer to={`/order/${order._id}`}>
-                      <Button className='btn-sm' variant='light'>
-                        Details
-                      </Button>
-                    </LinkContainer>
-                  </td>
-                </tr>
-              ))}
+                  <td>Covid-19 Dashboard</td>
+                  <td>February 20, 2021</td>
+                  <td><a href='https://github.com/lit26/COVID19_Dashboard'>https://github.com/lit26/COVID19_Dashboard</a></td>
+                  <td>50</td>
             </tbody>
           </Table>
-        )}
+        
       </Col>
     </Row>
+  </Container>
   )
 }
 
