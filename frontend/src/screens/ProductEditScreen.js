@@ -13,12 +13,15 @@ const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id
 
   const [name, setName] = useState('')
-  const [price, setPrice] = useState(0)
+  // const [price, setPrice] = useState(0)
   const [image, setImage] = useState('')
-  const [brand, setBrand] = useState('')
-  const [category, setCategory] = useState('')
-  const [countInStock, setCountInStock] = useState(0)
+  const [githublink, setGithubLink] = useState('')
+  const [language, setLanguage] = useState('')
+  // const [brand, setBrand] = useState('')
+  // const [category, setCategory] = useState('')
+  // const [countInStock, setCountInStock] = useState(0)
   const [description, setDescription] = useState('')
+  const [issue, setIssue] = useState('')
   const [uploading, setUploading] = useState(false)
 
   const dispatch = useDispatch()
@@ -42,12 +45,15 @@ const ProductEditScreen = ({ match, history }) => {
         dispatch(listProductDetails(productId))
       } else {
         setName(product.name)
-        setPrice(product.price)
+        // setPrice(product.price)
+        setGithubLink(product.githublink)
         setImage(product.image)
-        setBrand(product.brand)
-        setCategory(product.category)
-        setCountInStock(product.countInStock)
+        setLanguage(product.language)
+        // setBrand(product.brand)
+        // setCategory(product.category)
+        // setCountInStock(product.countInStock)
         setDescription(product.description)
+        setIssue(product.issue)
       }
     }
   }, [dispatch, history, productId, product, successUpdate])
@@ -81,12 +87,11 @@ const ProductEditScreen = ({ match, history }) => {
       updateProduct({
         _id: productId,
         name,
-        price,
+        githublink, 
+        language,
         image,
-        brand,
-        category,
         description,
-        countInStock,
+        issue,
       })
     )
   }
@@ -97,7 +102,7 @@ const ProductEditScreen = ({ match, history }) => {
         Go Back
       </Link>
       <FormContainer>
-        <h1>Edit Product</h1>
+        <h1>Edit Repository</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
         {loading ? (
@@ -107,7 +112,7 @@ const ProductEditScreen = ({ match, history }) => {
         ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group controlId='name'>
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Project Name</Form.Label>
               <Form.Control
                 type='name'
                 placeholder='Enter name'
@@ -116,7 +121,7 @@ const ProductEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='price'>
+            {/* <Form.Group controlId='price'>
               <Form.Label>Price</Form.Label>
               <Form.Control
                 type='number'
@@ -124,7 +129,7 @@ const ProductEditScreen = ({ match, history }) => {
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               ></Form.Control>
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group controlId='image'>
               <Form.Label>Image</Form.Label>
@@ -143,44 +148,44 @@ const ProductEditScreen = ({ match, history }) => {
               {uploading && <Loader />}
             </Form.Group>
 
-            <Form.Group controlId='brand'>
-              <Form.Label>Brand</Form.Label>
-              <Form.Control
-                type='text'
-                placeholder='Enter brand'
-                value={brand}
-                onChange={(e) => setBrand(e.target.value)}
-              ></Form.Control>
+            <Form.Group controlId='language'>
+              <Form.Label>Language</Form.Label>
+              <select class="form-control" value={language}>
+                <option value="python">Python</option>
+                <option value="react">React</option>
+                <option value="c++">C++</option>
+              </select>
             </Form.Group>
 
-            <Form.Group controlId='countInStock'>
-              <Form.Label>Count In Stock</Form.Label>
+            <Form.Group controlId='githublink'>
+              <Form.Label>Github Link</Form.Label>
               <Form.Control
-                type='number'
-                placeholder='Enter countInStock'
-                value={countInStock}
-                onChange={(e) => setCountInStock(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
-
-            <Form.Group controlId='category'>
-              <Form.Label>Category</Form.Label>
-              <Form.Control
-                type='text'
-                placeholder='Enter category'
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
+                type='githublink'
+                placeholder='Enter github link'
+                value={githublink}
+                onChange={(e) => setGithubLink(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='description'>
               <Form.Label>Description</Form.Label>
-              <Form.Control
-                type='text'
+              <textarea 
+                class="form-control"
                 placeholder='Enter description'
                 value={description}
+                rows="3"
                 onChange={(e) => setDescription(e.target.value)}
-              ></Form.Control>
+                spellcheck="false"></textarea>
+            </Form.Group>
+            <Form.Group controlId='Issues'>
+              <Form.Label>Issues</Form.Label>
+              <textarea 
+                class="form-control"
+                placeholder='Enter issue'
+                value={issue}
+                rows="3"
+                onChange={(e) => setIssue(e.target.value)}
+                spellcheck="false"></textarea>
             </Form.Group>
 
             <Button type='submit' variant='primary'>

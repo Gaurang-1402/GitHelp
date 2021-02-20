@@ -1,0 +1,46 @@
+.project__owner{
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.project__ownerName{
+    text-align: center;
+}
+.project__ownerProject svg{
+    height: 20px !important;
+    width: 20px !important;
+}
+.project__infoBlock{
+    margin-bottom: 10px;
+}
+.project__info svg{
+    height: 20px !important;
+    width: 20px !important;
+}
+.project__infoLink{
+    display: flex;
+    align-items: center;
+}
+.project__infoHeader{
+    display:flex;
+    align-items: center;
+    margin-bottom: 2px;
+}
+.project__infoHeader svg{
+    margin-right: 5px;
+}
+.projectItemCard__header{
+    margin-bottom: 0px;
+}
+.projectItemCard__hashtags{
+    display:flex;
+    flex-wrap: wrap;
+}
+.projectItemCard__hashtag{
+    background-color: rgb(57, 101, 204);
+    color:white;
+    margin:3px;
+    padding:3px 10px;
+    border-radius: 25px;
+    font-size: 13px;
+}
