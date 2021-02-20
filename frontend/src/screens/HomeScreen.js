@@ -87,12 +87,12 @@ const HomeScreen = ({ match }) => {
 
                 <Card.Body>
                   <Link to={`/product/'6030fcee26b9f63ad0b4dfa7'`}>
-                    <Card.Title as='div'>
-                      <strong>Repo Name2</strong>
+                    <Card.Title as='h2'>
+                      <strong>Electron Store: electronics eccomerce</strong>
                     </Card.Title>
                   </Link>
 
-                  <Card.Text as='h3'>Some description of the repo</Card.Text>
+                  <Card.Text >This is repository needs help with bug fixes.</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
@@ -106,12 +106,12 @@ const HomeScreen = ({ match }) => {
 
                 <Card.Body>
                   <Link to={`/product/'6030fcee26b9f63ad0b4dfa8'`}>
-                    <Card.Title as='div'>
+                    <Card.Title as='h2'>
                       <strong>Repo Name3</strong>
                     </Card.Title>
                   </Link>
 
-                  <Card.Text as='h3'>Some description of the repository</Card.Text>
+                  <Card.Text>Some description of the repository</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
