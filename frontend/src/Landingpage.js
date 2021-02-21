@@ -15,7 +15,7 @@ function Landingpage() {
                     <h1 className="landingpage__title">GitHelp</h1>
                     <span className="landingpage__subtitle">A place for working team projects. Everyone needs git help. </span>
                     <br />
-                    <Button href="/" className="landingpage__learnMore">Learn More</Button>
+                    <Button href="/home" className="landingpage__learnMore">Learn More</Button>
                 </div>
             </section>
             <div className="landingpage__circle1">
