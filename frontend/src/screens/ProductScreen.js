@@ -106,7 +106,7 @@ const ProductScreen = ({ history, match }) => {
                 <ListGroup.Item className="project__ownerProject">
                   <div>
                     <MailOutlineIcon /> 
-                    <div>ltianningli@gmail.com</div>
+                    <div>tianning@usc.edu</div>
                   </div>
                 </ListGroup.Item>
                 <ListGroup.Item className="project__ownerProject">
