@@ -133,8 +133,8 @@ const ProductScreen = ({ history, match }) => {
                 <ListGroup.Item>
                   <h3 className="projectItemCard__header">COVID 19 Dashboard</h3>
                   <div className="projectItemCard__hashtags">
-                    <div className="projectItemCard__hashtag" style={{backgroundColor: 'rgb(162, 238, 239)'}}><strong>enhancement</strong></div>
-                    <div className="projectItemCard__hashtag" style={{backgroundColor: 'rgb(0, 134, 114)'}}><strong>help wanted</strong></div>
+                    <div className="projectItemCard__hashtag" style={{backgroundColor: 'green'}}><strong>enhancement</strong></div>
+                    <div className="projectItemCard__hashtag" style={{backgroundColor: 'purple'}}><strong>document</strong></div>
                   </div>
                 </ListGroup.Item>
                 <ListGroup.Item>
