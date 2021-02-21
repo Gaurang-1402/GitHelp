@@ -155,7 +155,7 @@ const ProfileScreen = ({ location, history }) => {
     </Row>
     <Row>
       <Col md={12}>
-        <h2>Contribution Activity</h2>
+        <h2>Your Contribution Activity</h2>
         
           <Table striped bordered hover responsive className='table-sm'>
             <thead>
@@ -182,6 +182,28 @@ const ProfileScreen = ({ location, history }) => {
               <td>25</td>
             </tbody>
           </Table>
+
+          <h2>Contributions on your repositories</h2>
+        
+        <Table striped bordered hover responsive className='table-sm'>
+          <thead>
+            <tr>
+              <th>TITLE</th>
+              <th>CONTRIBUTION DATE</th>
+              <th>ISSUE</th>
+              <th>LINK</th>
+              <th>USER</th>
+            </tr>
+          </thead>
+          <tbody>
+                <td>Twitter Stock analysis</td>
+                <td>February 20, 2021</td>
+                <td>Twitter API help </td>
+                <td><a href='https://github.com/lit26/COVID19_Dashboard'>https://github.com/lit26/COVID19_Dashboard</a></td>
+                <td>Abdullah-123</td>
+          </tbody>
+ 
+        </Table>
         
       </Col>
     </Row>
