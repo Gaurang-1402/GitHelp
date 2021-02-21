@@ -19,6 +19,7 @@ import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
 import Landingpage from './Landingpage'
+import RepositoryScreen from './screens/RepositoryScreen'
 
 
 const App = () => {
@@ -38,6 +39,8 @@ const App = () => {
           <Route path='/cart/:id?' component={CartScreen} />
           <Route path='/admin/userlist' component={UserListScreen} />
           <Route path='/admin/user/:id/edit' component={UserEditScreen} />
+          <Route path='/repository' component={RepositoryScreen} />
+
           <Route
             path='/admin/productlist'
             component={ProductListScreen}

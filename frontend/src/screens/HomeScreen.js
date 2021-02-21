@@ -30,7 +30,7 @@ const HomeScreen = ({ match }) => {
 
     
     <>
-        <Button><Link to='/admin/product/6031ce500bd9bab66c589d66/edit'>Make a request for collaboration</Link></Button>
+        <Link to='/repository'><Button>Make a request for collaboration</Button></Link>
       <Meta />
       {!keyword ? (
         <ProductCarousel />

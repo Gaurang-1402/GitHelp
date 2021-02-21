@@ -31,7 +31,7 @@ const ProfileScreen = ({ location, history }) => {
 
   useEffect(() => {
     if (!userInfo) {
-      history.push('/login')
+      history.push('/profile')
     } else {
       if (!user || !user.name || success) {
         dispatch({ type: USER_UPDATE_PROFILE_RESET })
@@ -65,8 +65,8 @@ const ProfileScreen = ({ location, history }) => {
       </Col>
       <Col>
       <ListGroup>
-        <ListGroup.Item>{user.name}</ListGroup.Item>
-        <ListGroup.Item>{user.email}</ListGroup.Item>
+        <ListGroup.Item>Curtis Lee</ListGroup.Item>
+        <ListGroup.Item>curtis_lee@berkeley.edu</ListGroup.Item>
         <ListGroup.Item action onClick={handleShow} variant='dark'>Update Profile</ListGroup.Item>
       </ListGroup>
       </Col>
