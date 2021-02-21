@@ -94,3 +94,6 @@
 .main__sectionTitle{
     flex: 0.4;
 }
+.landingpage__buttons a{
+    margin-right: 20px;
+}

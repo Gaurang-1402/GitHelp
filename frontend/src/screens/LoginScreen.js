@@ -7,7 +7,7 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer'
 import { login } from '../actions/userActions'
-
+import './LoginScreen.css'
 
 
 const LoginScreen = ({ location, history }) => {
@@ -59,9 +59,9 @@ const LoginScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type='submit' variant='primary'>
-          Sign In
-        </Button>
+          <Button type='submit' variant='primary'>
+            Sign In
+          </Button>
       </Form>
 
       <Row className='py-3'>
@@ -72,18 +72,14 @@ const LoginScreen = ({ location, history }) => {
           </Link>
         </Col>
       </Row>
-      
-
-
-      <Col>
-      <h2> Or... </h2>
+    
+      <h2 className="signupChoice"> Or </h2>
       <Button size='sm' variant='primary' block>
         <span>
           <i><SocialIcon url="https://github.com/" target="_blank" network="github" bgColor="white" style={{ height: 25, width: 25, marginRight:'5px' }}/></i>
           Sign in with GitHub 
         </span>
       </Button>
-      </Col>
 
     </FormContainer>
   )
