@@ -173,9 +173,6 @@ const HomeScreen = ({ match }) => {
                 </Card.Body>
               </Card>
             </Col>
-
-
-
           </Row>
         </>
       )}
