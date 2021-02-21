@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch} from "react-redux";
 import {
@@ -33,7 +33,7 @@ import {ProgressBar} from 'react-bootstrap'
 const ProductScreen = ({ history, match }) => {
 
   // const [qty, setQty] = useState(1);
-  const [rating] = useState(0);
+  const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
 
   const dispatch = useDispatch();
