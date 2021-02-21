@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button, Row, Col } from 'react-bootstrap'
+import { SocialIcon } from 'react-social-icons'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer'
 import { login } from '../actions/userActions'
+
+
 
 const LoginScreen = ({ location, history }) => {
   const [email, setEmail] = useState('')
@@ -32,6 +35,7 @@ const LoginScreen = ({ location, history }) => {
   return (
     <FormContainer>
       <h1>Sign In</h1>
+
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
@@ -68,6 +72,21 @@ const LoginScreen = ({ location, history }) => {
           </Link>
         </Col>
       </Row>
+      
+
+
+      <Col>
+      <h2> Or... </h2>
+      <Button size='lg' variant='primary'>
+        <Col>
+          <SocialIcon url="https://github.com/" target="_blank" network="github" bgColor="white"/>
+        </Col>
+        <Col>
+          Sign in with GitHub
+        </Col> 
+      </Button>
+      </Col>
+
     </FormContainer>
   )
 }
