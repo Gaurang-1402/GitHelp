@@ -77,13 +77,11 @@ const LoginScreen = ({ location, history }) => {
 
       <Col>
       <h2> Or... </h2>
-      <Button size='lg' variant='primary'>
-        <Col>
-          <SocialIcon url="https://github.com/" target="_blank" network="github" bgColor="white"/>
-        </Col>
-        <Col>
-          Sign in with GitHub
-        </Col> 
+      <Button size='sm' variant='primary' block>
+        <span>
+          <i><SocialIcon url="https://github.com/" target="_blank" network="github" bgColor="white" style={{ height: 25, width: 25, marginRight:'5px' }}/></i>
+          Sign in with GitHub 
+        </span>
       </Button>
       </Col>
 
