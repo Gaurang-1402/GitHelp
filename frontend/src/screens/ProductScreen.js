@@ -181,9 +181,12 @@ const ProductScreen = ({ history, match }) => {
                         </a>
                     </div>
                   </div>
-                  <Link className="btn btn-primary my-3" to="/">
+                  <a href='https://github.com/lit26/COVID19_Dashboard'>
+             <Button  >
                     Contribute
-                  </Link>
+                    
+                  </Button>
+                  </a>
                 </ListGroup.Item>
               </ListGroup>
             </Col>

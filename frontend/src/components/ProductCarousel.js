@@ -23,16 +23,7 @@ const ProductCarousel = () => {
   ) : (
     <Carousel pause='hover' className='bg-dark'>
 
-        <Carousel.Item key=''>
-          <Link to={`/product`}>
-            <Image src='/images/pytorch.jpg' alt='' fluid />
-            <Carousel.Caption className='carousel-caption'>
-              <h2>
-                Pytorch 
-              </h2>
-            </Carousel.Caption>
-          </Link>
-        </Carousel.Item>
+
         <Carousel.Item key=''>
           <Link to={`/product`}>
             <Image src='/images/coviddashboard.jpg' alt='' fluid />
