@@ -5,7 +5,7 @@ import './Footer.css'
 const Footer = () => {
   return (
     <footer className="Footer">
-      Copyright © HackerHub 2020. All Rights Reserved.
+      Copyright © HackerHub 2021. All Rights Reserved.
     </footer>
   )
 }
